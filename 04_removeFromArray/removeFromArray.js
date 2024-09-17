@@ -1,7 +1,7 @@
-const removeFromArray = function(array, itemToRemove) {
+const removeFromArray = function(array, firstItem, secondItem = null) {
     let newArray = [];
     for (const element of array) {
-        if (element === itemToRemove){
+        if (element === firstItem || element === secondItem){
             continue;
         }
         newArray.push(element)
