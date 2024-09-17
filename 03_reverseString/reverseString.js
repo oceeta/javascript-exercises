@@ -1,9 +1,9 @@
 const reverseString = function(originalString) {
-    let repeatedString = "";
+    let reversedString = "";
     for (let i = originalString.length - 1; i >= 0 ; i--) {
-        repeatedString += originalString[i];
+        reversedString += originalString[i];
     }
-    return repeatedString;
+    return reversedString;
 };
 
 // Do not edit below this line
