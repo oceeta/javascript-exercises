@@ -16,7 +16,7 @@ const fibonacci = function(n) {
             previousFib = currentFib;
             count++;
         }
-        return previousFib;
+        return currentFib;
     }
 };
 
