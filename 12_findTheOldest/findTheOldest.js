@@ -1,16 +1,15 @@
+const getAge = function(birth, death) {
+    if (!death) {
+        death = new Date().getFullYear();
+    }
+    return death - birth;
+}
+
 const findTheOldest = function(array) {
     return array.reduce((oldest, currentPerson) => {
-        const currentYear = new Date().getFullYear();
-        if ("yearOfDeath" in currentPerson === false) {
-            if (currentYear - currentPerson.yearOfBirth > oldest.yearOfDeath - oldest.yearOfBirth) {
-                oldest = currentPerson;
-            } 
-        } else if ("yearOfDeath" in oldest === false) {
-            if (currentYear - oldest.yearOfBirth < currentPerson.yearOfDeath - currentPerson.yearOfBirth) {
-                oldest = currentPerson;
-            } 
-        }
-        if (currentPerson.yearOfDeath - currentPerson.yearOfBirth > oldest.yearOfDeath - oldest.yearOfBirth) {
+        const oldestAge = getAge(oldest.yearOfBirth, oldest.yearOfDeath);
+        const currentAge = getAge(currentPerson.yearOfBirth, currentPerson.yearOfDeath);
+        if (currentAge > oldestAge) {
             oldest = currentPerson;
         }
         return oldest;
